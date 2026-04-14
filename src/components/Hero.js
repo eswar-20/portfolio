@@ -320,11 +320,13 @@ const Hero = () => {
         }
 
         .profile-frame {
-          width: 320px;
-          height: 380px;
+          width: 260px;
+          height: 320px;
           background: linear-gradient(135deg, #6F4E37, #A67B5B);
-          border-radius: 24px;
-          padding: 6px;
+          border-radius: 20px;
+          padding: 8px;
+          position: relative;
+          overflow: hidden;
           box-shadow: 0 25px 50px rgba(111, 78, 55, 0.25);
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -476,8 +478,8 @@ const Hero = () => {
           }
 
           .profile-frame {
-            width: 280px;
-            height: 330px;
+            width: 220px;
+            height: 280px;
           }
         }
 
@@ -554,8 +556,8 @@ const Hero = () => {
           }
 
           .profile-frame {
-            width: 240px;
-            height: 280px;
+            width: 200px;
+            height: 240px;
           }
 
           .social-glass-card {
