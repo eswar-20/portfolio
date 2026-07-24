@@ -14,6 +14,20 @@ const Projects = () => {
       },
       features: ["Donor Registration", "Blood Inventory Tracking", "Request Management", "User Authentication"],
       category: "Full Stack Application"
+    },
+    {
+      title: "Sri Balaji Medi Systems – Medical Equipment Marketplace",
+      description: "Developed a full-stack Medical Equipment Marketplace using Spring Boot, React.js, MySQL, and REST APIs. Implemented secure Email OTP authentication using the Brevo API, JWT authentication, product management, cart, wishlist, order management, and an owner dashboard. Deployed the application on Render.",
+      initial: "S",
+      gradient: "linear-gradient(135deg, #0F766E, #115E59)",
+      technologies: ["Spring Boot", "React.js", "Java", "MySQL", "REST APIs", "JWT", "Brevo API", "HTML", "CSS", "JavaScript", "Git", "GitHub", "Render"],
+      links: {
+        frontend: "https://github.com/eswar-20/Sri-Balaji-Medi-Systems/tree/main/frontend",
+        backend: "https://github.com/eswar-20/Sri-Balaji-Medi-Systems/tree/main/backend"
+      },
+      features: ["Email OTP Authentication", "Product Management", "Order Management", "Owner Dashboard"],
+      category: "FULL STACK APPLICATION",
+      image: "/medical_marketplace.jpg"
     }
   ];
 
@@ -43,7 +57,15 @@ const Projects = () => {
               <div className="project-preview">
                 <div className="preview-container">
                   <div className="project-banner" style={{ background: project.gradient }}>
-                    <div className="project-initial">{project.initial}</div>
+                    {project.image ? (
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="project-banner-img"
+                      />
+                    ) : (
+                      <div className="project-initial">{project.initial}</div>
+                    )}
                     <div className="project-overlay">
                       <div className="project-category">{project.category}</div>
                     </div>
@@ -254,8 +276,23 @@ const Projects = () => {
           font-weight: 800;
           color: white;
           position: relative;
-          z-index: 2;
+          z-index: 3;
           text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-banner-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .preview-container:hover .project-banner-img {
+          transform: scale(1.05);
         }
 
         .project-overlay {
@@ -265,7 +302,7 @@ const Projects = () => {
           right: 0;
           bottom: 0;
           background: linear-gradient(135deg, rgba(111, 78, 55, 0.1), rgba(166, 123, 91, 0.1));
-          z-index: 1;
+          z-index: 2;
         }
 
         .project-category {
